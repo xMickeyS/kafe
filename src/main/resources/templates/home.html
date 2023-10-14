@@ -17,6 +17,11 @@
 
   <p><span th:text="${greeting}"></span></p>
 
+  <div id="success-msg" class="alert alert-success"
+       th:if="${confirmOrder}">
+    Your order has been successfully submitted !
+  </div>
+
   <div sec:authorize="isAuthenticated()">
     <p>Khun <b><span sec:authentication="name"></span></b></p>
     <a class="btn btn-primary" th:href="@{/logout}">Logout</a>
